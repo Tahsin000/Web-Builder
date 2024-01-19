@@ -31,9 +31,9 @@ Route::group(['middleware' => ['auth', 'redirect404']], function (){
     Route::delete('/resources/{id}', [ResourceController::class, 'destroy'])->name('resources.destroy');
 
     Route::get('/', [ResourceController::class, 'create'])->name('resources.create');
-
-    Route::get('/publish/{router}', [ResourceController::class, 'show'])->name('resources.show');
+    
 });
+Route::get('/{router}', [ResourceController::class, 'show'])->name('resources.show');
 
 Route::group(['middleware' => ['guest', 'redirect404']], function (){
     Route::get('/login', [AuthController::class, 'index'])->name('login');

@@ -65,13 +65,13 @@
                                 @foreach ($userResources as $userResource)
                                     <tr>
                                         <td>{{ $userResource->router }}</td>
-                                        <td>{{ $userResource->html }}</td>
-                                        <td>{{ $userResource->css }}</td>
-                                        <td>{{ $userResource->script }}</td>
+                                        <td>{{ Illuminate\Support\Str::limit($userResource->html, 10) }}</td> 
+                                        <td>{{ Illuminate\Support\Str::limit($userResource->css, 10) }}</td>
+                                        <td>{{ Illuminate\Support\Str::limit($userResource->script, 10) }}</td>
                                         <td>{{ $userResource->updated_at }}</td>
                                         <td class="flex gap-2">
                                             <a target="_blank"
-                                                href="{{ env('APP_URL') . 'publish/' . $userResource->router }}"
+                                                href="{{ env('APP_URL') . $userResource->router }}"
                                                 class="btn btn-outline-primary btn-sm">Live</a>
                                             <a class="btn btn-outline-primary btn-sm"
                                                 href="{{ route('resources.edit', ['id' => $userResource->id]) }}"

@@ -33,7 +33,7 @@ class ResourceController extends Controller
         $validatedData['createBy'] = $user->id;
 
         Resource::create($validatedData);
-        $modifiedRouter = env('APP_URL') . "publish/" . $validatedData['router'];
+        $modifiedRouter = env('APP_URL') . $validatedData['router'];
         session()->flash('created_router', $modifiedRouter);
 
 
