@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css">
 
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@100&display=swap"
-        rel="stylesheet">
-        <script src="{{ asset('js/tailwindcss.3.4.1') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script src="{{ asset('js/tailwindcss.3.4.1') }}"></script>
     <style>
         * {
             font-family: 'Inter', sans-serif;

@@ -19,7 +19,7 @@ use App\Http\Controllers\ResourceController;
 
 
 
-Route::group(['middleware' => ['auth', 'redirect404']], function (){
+Route::group(['middleware' => ['auth', 'redirect404']], function () {
     Route::get('/create', [ResourceController::class, 'create'])->name('resources.create');
     Route::post('/store', [ResourceController::class, 'store'])->name('resources.store');
     Route::get('/user-resources', [ResourceController::class, 'getUserResources'])->name('user-resources');
@@ -31,20 +31,15 @@ Route::group(['middleware' => ['auth', 'redirect404']], function (){
     Route::delete('/resources/{id}', [ResourceController::class, 'destroy'])->name('resources.destroy');
 
     Route::get('/', [ResourceController::class, 'create'])->name('resources.create');
-    
 });
-Route::get('/{router}', [ResourceController::class, 'show'])->name('resources.show');
 
-Route::group(['middleware' => ['guest', 'redirect404']], function (){
+Route::group(['middleware' => ['guest', 'redirect404']], function () {
     Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
-    
+
     Route::get('/register', [AuthController::class, 'register_view'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
 
 
-
-
-
-
+Route::get('/{router}', [ResourceController::class, 'show'])->name('resources.show');
